@@ -8,6 +8,13 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
+type Student struct {
+	Id         int
+	Email      string
+	First_Name string
+	Last_Name  string
+}
+
 func main() {
 	password := "SQLpassword2023"
 	dbName := "testdb"
@@ -43,13 +50,6 @@ func insertStudent(password, dbName, email, first_name, last_name string) {
 	}
 
 	fmt.Printf("The last inserted row id: %d\n", lastId)
-}
-
-type Student struct {
-	Id         int
-	Email      string
-	First_Name string
-	Last_Name  string
 }
 
 func selectStudents(password, dbName string) {
